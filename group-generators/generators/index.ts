@@ -36,8 +36,8 @@ import sismoGenZero from "./sismo-gen-zero";
 import sismoGitcoinDonors from "./sismo-gitcoin-donors";
 import sismoLensFollowers from "./sismo-lens-followers";
 import sismoMasqueradeLensFollowers from "./sismo-masquerade-lens-followers";
+import snapshotGitcoinDaoVoters from "./snapshot-gitcoindao-voters";
 import top100Ens from "./top-100-ens";
-
 
 export const groupGenerators: GroupGeneratorsLibrary = {
   "circularmerch-lens-followers": circularmerchLensFollowers,
@@ -76,5 +76,6 @@ export const groupGenerators: GroupGeneratorsLibrary = {
   "sismo-gitcoin-donors": sismoGitcoinDonors,
   "sismo-lens-followers": sismoLensFollowers,
   "sismo-masquerade-lens-followers": sismoMasqueradeLensFollowers,
+  "snapshot-gitcoindao-voters": snapshotGitcoinDaoVoters,
   "top-100-ens": top100Ens,
 };

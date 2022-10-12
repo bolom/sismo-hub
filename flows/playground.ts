@@ -7,7 +7,7 @@ import { playgroundFactoryFlows } from "@flows/factory/playground-factory";
 import { Network } from "topics/attester";
 import { Flow } from "topics/flow";
 
-const gamejutsuCommon = { 
+const gamejutsuCommon = {
   attester: hydraS1SimpleAttester.name,
   network: Network.Polygon,
   attesterType: "hydra-s1",
@@ -184,7 +184,7 @@ export const playgroundFlows: Flow[] = [
   {
     ...gamejutsuCommon,
     badgesInternalCollectionsIds: [17],
-    path: "gamejutsu-silver-loser", 
+    path: "gamejutsu-silver-loser",
     title: "Green Belt Loser",
     subtitle: "Attest your fifth repetitive lose at gamejutsu.app",
   },
@@ -332,7 +332,7 @@ export const playgroundFlows: Flow[] = [
     title: "NFT Collector",
     logoUrl: null,
     subtitle: "Attest you are a major NFT Collector",
-    onboardingDescription: "You your NFT Collector ZK Badge proof to  increase privacy while providing the reputations", 
+    onboardingDescription: "You your NFT Collector ZK Badge proof to  increase privacy while providing the reputations",
     ctaLabel: "",
     ctaUrl: "https://twitter.com/Web3PON",
     congratulationTexts: [
@@ -355,5 +355,29 @@ export const playgroundFlows: Flow[] = [
       "You can now prove that you are part of",
       "the most reputable ENS domain accounts on Twitter",
     ],
+  },
+  {
+    internalCollectionId: 3, // input the same collection id than before
+    name: "Gitcoin Voter on Snapshot ZK Badge", // add a name to your badge
+    description: "ZK Badge received by Gitcoin voters on Snapshot", // describe it !
+    image: "sismo_citizen.svg", // give it a wonderful artwork ;)
+    groupGeneratorName: "snapshot-gitcoindao-voters", // input the name of your GroupGenerator
+    publicContacts: [{ // give us a way to join you :)
+      type: "github", // github | twitter | lens ...
+      contact: "leosayous21" // your username
+    }],
+    eligibility: {
+      // provide a short description of your eligibility criterias
+      shortDescription: "Vote in the GitcoinDAO space on Snapshot",
+      // provide a technical description of your eligibility criterias
+      specification: "You should have voted at least once in the GitcoinDAO space on Snapshot",
+    },
+    links: [
+      {
+        logoUrl: "", // a nice logo to have next to the url
+        label: "Gitcoin Space", // label for your url
+        url: "https://snapshot.org/#/gitcoindao.eth" // url of your project (here the Gitcoin space)
+      }
+    ]
   },
 ];

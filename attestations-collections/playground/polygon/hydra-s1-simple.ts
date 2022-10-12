@@ -122,33 +122,39 @@ export const hydraS1SimpleAttester = generateHydraS1Attester(
       {
         internalCollectionId: 27,
         groupFetcher: async (groupStore) => [
-          await groupStore.latest("lilnouns-proplot-contributors"), 
+          await groupStore.latest("lilnouns-proplot-contributors"),
         ],
       },
       {
         internalCollectionId: 28,
         groupFetcher: async (groupStore) => [
-          await groupStore.latest("lilnouns-proplot-voters"), 
+          await groupStore.latest("lilnouns-proplot-voters"),
         ],
       },
       // Proof of Attendance (POAP)
       {
         internalCollectionId: 29,
         groupFetcher: async (groupStore) => [
-          await groupStore.latest("proof-of-attendance-main-events"), 
+          await groupStore.latest("proof-of-attendance-main-events"),
         ],
       },
       {
         internalCollectionId: 30,
         groupFetcher: async (groupStore) => [
-          await groupStore.latest("nft-collector"), 
+          await groupStore.latest("nft-collector"),
         ],
       },
+      {
+       internalCollectionId: 31,
+       groupFetcher: async (groupStore) => [
+         await groupStore.latest("snapshot-gitcoindao-voters"),
+         ],
+       },
       // ENS Supporters
       {
         internalCollectionId: 33,
         groupFetcher: async (groupStore) => [
-          await groupStore.latest("ens-supporters"), 
+          await groupStore.latest("ens-supporters"),
         ],
       },
       // sismo Contributors
@@ -642,7 +648,7 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       internalCollectionId: 27,
       name: "LilNouns PropLot Contributors ZK Badge",
       description: "ZK Badge received by LilNouns PropLot contributors",
-      image: "proplot-contributors-badge.svg", 
+      image: "proplot-contributors-badge.svg",
       groupGeneratorName: "lilnouns-proplot-contributors",
       publicContacts: [{
         type: "github",
@@ -664,12 +670,12 @@ export const hydraS1SimpleBadges: BadgesCollection = {
           url: "https://lilnouns.wtf/ideas"
         }
       ]
-    }, 
+    },
     {
       internalCollectionId: 28,
       name: "LilNouns PropLot Voters ZK Badge",
       description: "ZK Badge received by LilNouns PropLot voters",
-      image: "proplot-voters-badge.svg", 
+      image: "proplot-voters-badge.svg",
       groupGeneratorName: "lilnouns-proplot-voters",
       publicContacts: [{
         type: "github",
@@ -691,12 +697,12 @@ export const hydraS1SimpleBadges: BadgesCollection = {
           url: "https://lilnouns.wtf/ideas"
         }
       ]
-    }, 
+    },
     {
       internalCollectionId: 29,
       name: "[playground] Proof of Attendance ZK Badge",
       description: "[playground] ZK Badge owned by Ethereum events attendees. This Badge proves their IRL attendance to at least one Ethereum event.",
-      image: "proof-of-attendance-main-events.svg", 
+      image: "proof-of-attendance-main-events.svg",
       groupGeneratorName: "proof-of-attendance-main-events",
       publicContacts: [{
         type: "twitter",
@@ -714,16 +720,16 @@ export const hydraS1SimpleBadges: BadgesCollection = {
           url: "https://poap.gallery/"
         }
       ]
-    }, 
+    },
     {
-      internalCollectionId: 30, 
-      name: "NFT Collector ZK Badge", 
-      description: "ZK Badge received by holders of major NFTs", 
-      image: "nft-collector.svg", 
-      groupGeneratorName: "nft-collector", 
-      publicContacts: [{ 
-        type: "twitter", 
-        contact: "Web3PON" 
+      internalCollectionId: 30,
+      name: "NFT Collector ZK Badge",
+      description: "ZK Badge received by holders of major NFTs",
+      image: "nft-collector.svg",
+      groupGeneratorName: "nft-collector",
+      publicContacts: [{
+        type: "twitter",
+        contact: "Web3PON"
       }],
       eligibility: {
         shortDescription: "Have NFT from the post popular collections",  // Add collections
@@ -731,12 +737,12 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       },
       links: [
       ]
-    }, 
+    },
     {
       internalCollectionId: 33,
       name: "[playground] ENS Supporter ZK Badge",
       description: "[playground] ZK Badge owned by ENS name owners that are reputable on Twitter (curated by hive.one) and added their .eth in their username.",
-      image: "ens_supporters.svg", 
+      image: "ens_supporters.svg",
       groupGeneratorName: "ens-supporters",
       publicContacts: [{
         type: "twitter",
@@ -777,6 +783,28 @@ export const hydraS1SimpleBadges: BadgesCollection = {
       },
       links: []
     },
+    {
+      internalCollectionId: 31,
+      name: "[playground] Gitcoin Voter on Snapshot ZK Badge",
+      description: "[playground] ZK Badge received by Gitcoin voters on Snapshot",
+      image: "sismo_citizen.svg",
+      groupGeneratorName: "snapshot-gitcoindao-voters",
+      publicContacts: [{
+        type: "twitter",
+        contact: "@sismo_eth"
+      }],
+      eligibility: {
+        shortDescription: "Vote in the GitcoinDAO space on Snapshot",
+        specification: "You should have voted at least once in the GitcoinDAO space on Snapshot",
+      },
+      links: [
+        {
+          logoUrl: "",
+          label: "Gitcoin Space",
+          url: "https://snapshot.org/#/gitcoindao.eth"
+        }
+      ]
+    }, 
   ],
 };
 
